@@ -1,0 +1,17 @@
+[package]
+name = "notion_rs"
+version = "0.1.0"
+authors = ["Jonathan Kelley <jkelleyrtp@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9.18"
+
+
+
+[dev-dependencies]
+
+
+[[example]]
+name = "client_test"
+path = "examples/client_test.rs"

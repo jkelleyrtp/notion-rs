@@ -1,4 +1,7 @@
-# notion-rs
+# Notion-rs
+
+A rust implementation of the Notion.so unofficial API.
 
 
-The unoffical rust api for notion.so
+TODO:
+- [ ] Create types for block
