@@ -25,18 +25,16 @@ pub struct Collection {
 
 
 
-fn get_blocks_from_id(client: notionclient::NotionClient, id: String) -> Collection {
-    let resp = client::query();
+// fn get_blocks_from_id(client: notionclient::NotionClient, id: String) -> Collection {
+//     let resp = client::query();
 
-    // match client::
-
-
-    // let resp: HashMap<String, String> = reqwest::get("https://httpbin.org/ip")
-
-    Collection {
+//     // match client::
 
 
-    }
+//     // let resp: HashMap<String, String> = reqwest::get("https://httpbin.org/ip")
+
+//     Collection {
 
 
-}
+//     }
+
