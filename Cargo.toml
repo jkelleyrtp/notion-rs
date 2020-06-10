@@ -5,11 +5,15 @@ authors = ["Jonathan Kelley <jkelleyrtp@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-reqwest = "0.9.18"
-
-
+reqwest = "0.10.6"
+serde = "1.0.111"
+serde_json = "1.0.55"
+anyhow = "1.0.31"
+petgraph = "0.5.1"
+toml = "0.5.6"
 
 [dev-dependencies]
+clap = "2.33.1"
 
 
 [[example]]

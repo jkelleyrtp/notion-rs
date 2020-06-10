@@ -1,0 +1,16 @@
+[auth]
+token_v2 = "32308c9cf7bcf50c6a5f2d248198bc870c16bcd582acc0521411fd0c99932bf8dc899e1792ea633b38a817aace32eeab0069f9063b04592b242ba1fafefa36d76e302b780e30c0ab351bb02ead1b"
+
+
+[client]
+api_url= "https://www.notion.so/api/v3/"
+base_url = "https://www.notion.so"
+
+signed_url_prefix = "https://www.notion.so/signed/"
+
+s3_url_prefix = "https://s3-us-west-2.amazonaws.com/secure.notion-static"
+s3_url_prefix_encoded = "https://s3.us-west-2.amazonaws.com/secure.notion-static"
+
+
+[config]
+cache = true

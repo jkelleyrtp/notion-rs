@@ -1,0 +1,1279 @@
+{
+  "0cf9d039-95e9-422f-a0d2-ca158fdff90c": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662160000,
+      "id": "0cf9d039-95e9-422f-a0d2-ca158fdff90c",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662220000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Person buys tesla, pays for the next 2 to be made"]]
+      },
+      "type": "numbered_list",
+      "version": 61
+    }
+  },
+  "1a520607-bf31-4d68-bc18-94651e40b9d4": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661320000,
+      "id": "1a520607-bf31-4d68-bc18-94651e40b9d4",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661320000,
+      "parent_id": "e7703bdf-07b3-4617-9c11-edaee05772bf",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Expensive meal plans, drinks, outings, etc."]]
+      },
+      "type": "text",
+      "version": 66
+    }
+  },
+  "1c79b8e0-7281-4294-83a3-1d00b20f0aa3": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662100000,
+      "id": "1c79b8e0-7281-4294-83a3-1d00b20f0aa3",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662100000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Build margins into the final cost of the car to cover a 25% attrition rate if all else fails"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 117
+    }
+  },
+  "1fb6644a-fdd8-4ce7-a10a-8d771e56877f": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "1c79b8e0-7281-4294-83a3-1d00b20f0aa3",
+        "e026932e-fe8f-41eb-a9b2-cd8bcd0ab9a1",
+        "7dbd08a9-5598-441f-88c0-6cbaaf6b46f3",
+        "0cf9d039-95e9-422f-a0d2-ca158fdff90c",
+        "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+        "881682a5-3ec9-400a-9663-d86dccdc1b59",
+        "65aac87d-3b6f-4206-9d5a-637fc34dcc87"
+      ],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661980000,
+      "id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582057020000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Go one-plus mode and have people sign up to be on the shortlist for the first round of electric space-car - only release 100. Have people commit $1000 or something "
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 244
+    }
+  },
+  "21485897-f8fd-454c-b136-63803d91ac75": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662580000,
+      "id": "21485897-f8fd-454c-b136-63803d91ac75",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662580000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Build 30 cars, make 2 mill, pay off 1 mill loan, 6,000k in cash"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 18
+    }
+  },
+  "2761dc66-10ef-427d-9e29-2710b3ddc367": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662340000,
+      "id": "2761dc66-10ef-427d-9e29-2710b3ddc367",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662640000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Sell and deliver all 10, make 1 mill and use up the bank loan, have 500k in cash, lease a bigger building and some equipment to make the cars in"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 177
+    }
+  },
+  "27810f62-95d5-433b-9559-bea2fae1ca88": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "d9783f8e-5f8d-4fd5-94f5-62af0ba1f3ce",
+        "aa9e4bc3-63cf-455e-9066-284b9c9a2832"
+      ],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661560000,
+      "id": "27810f62-95d5-433b-9559-bea2fae1ca88",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661680000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Tell them that you solved their problem"]] },
+      "type": "numbered_list",
+      "version": 53
+    }
+  },
+  "27bbd514-c26b-425d-bb63-e5da1142fb9c": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": ["42fc6e85-d288-4b98-9f96-343ea486b442"],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661920000,
+      "id": "27bbd514-c26b-425d-bb63-e5da1142fb9c",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661980000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Build a hell of a PR with your fancy electric car, debuting it at events and such"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 97
+    }
+  },
+  "2c4243d4-0d85-4c25-af91-e77394629a8e": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661860000,
+      "id": "2c4243d4-0d85-4c25-af91-e77394629a8e",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661860000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Find someone who drive fancy cars"]] },
+      "type": "numbered_list",
+      "version": 49
+    }
+  },
+  "2e102688-4b30-48d5-b495-81b07a4179f8": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662520000,
+      "id": "2e102688-4b30-48d5-b495-81b07a4179f8",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662520000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Build 20 cars, make 2 mill, pay off 1 mill loan, 3,000k in cash"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 63
+    }
+  },
+  "2fa60295-65d9-4042-b69e-1ecaed950879": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661080000,
+      "id": "2fa60295-65d9-4042-b69e-1ecaed950879",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661320000,
+      "parent_id": "e7703bdf-07b3-4617-9c11-edaee05772bf",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Bought a fucking expensive crane simulator "]]
+      },
+      "type": "text",
+      "version": 101
+    }
+  },
+  "349f2f1b-6cdb-4445-9f72-f8dbbca3d1b9": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661980000,
+      "id": "349f2f1b-6cdb-4445-9f72-f8dbbca3d1b9",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661980000,
+      "parent_id": "61fecf88-b04f-4594-b8b8-706731c042a1",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Promise them some portion of the first 100 cars sold or whatever"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 95
+    }
+  },
+  "3b5625ff-7f5f-4f50-8c66-6cf6cc5a5834": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581660840000,
+      "id": "3b5625ff-7f5f-4f50-8c66-6cf6cc5a5834",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582007820000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [["How much does venture capital help - really?"]]
+      },
+      "type": "text",
+      "version": 3
+    }
+  },
+  "3c591f76-bbfb-416d-8e51-f6db9f10546b": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581660840000,
+      "id": "3c591f76-bbfb-416d-8e51-f6db9f10546b",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582007340000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "2,3,4 million dollars is a lot of money - yes. But shouldn't you have a customer /before/ you try to sell something? If you're going to move into a market, then get the hard technical problems solved and then find a customer. A good salesman should be able to sell a product without even having it completely finished."
+          ]
+        ]
+      },
+      "type": "text",
+      "version": 425
+    }
+  },
+  "40c496f2-509a-4449-8fd9-3bb077209675": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661620000,
+      "id": "40c496f2-509a-4449-8fd9-3bb077209675",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661740000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Repeat until you can hire a salesperson"]] },
+      "type": "numbered_list",
+      "version": 53
+    }
+  },
+  "42a04018-8500-41cd-9176-54ba29fe36da": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662340000,
+      "id": "42a04018-8500-41cd-9176-54ba29fe36da",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662460000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Now you can build 20 cars, borrow 1 mill (keep the 500k as cash to pay/hire)"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 137
+    }
+  },
+  "42fc6e85-d288-4b98-9f96-343ea486b442": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661980000,
+      "id": "42fc6e85-d288-4b98-9f96-343ea486b442",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662040000,
+      "parent_id": "27bbd514-c26b-425d-bb63-e5da1142fb9c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Tell people you're making space-age technology - bringing \"F1 to the masses\" and you're \"saving the environment\""
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 140
+    }
+  },
+  "46f9f915-482a-43ad-b0ca-7ca4005255d9": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "dcdc9d30-39c7-4782-8bbb-b4f23a15f12d",
+        "6398b3a7-930a-4416-af71-952ebc79cee9",
+        "3b5625ff-7f5f-4f50-8c66-6cf6cc5a5834",
+        "3c591f76-bbfb-416d-8e51-f6db9f10546b",
+        "a93c9858-277e-4c4d-907f-415b95acdb54",
+        "f5b1bfa0-ab78-4758-b886-591ad95ec666",
+        "79742e2d-4b7c-4fe3-aeec-c8a122bc72d2",
+        "e7703bdf-07b3-4617-9c11-edaee05772bf",
+        "bf83ef5f-efa1-4da1-82c4-b0465bc614cd",
+        "7558b384-318c-401b-b1ce-b17f4bb18c33",
+        "613af8ce-6702-4ec5-a111-1d27a96b35fd",
+        "a716fb7c-bb68-4dec-906e-d086f79c05de",
+        "27810f62-95d5-433b-9559-bea2fae1ca88",
+        "d087de69-3110-4175-9499-dea2c9d74222",
+        "7e2b0559-6c68-45b4-ae41-965d5977c1e7",
+        "4f66eab4-830e-4899-accc-a687550757cd",
+        "ee65b8dd-ecf3-4b48-824f-fecdb3ea4924",
+        "40c496f2-509a-4449-8fd9-3bb077209675",
+        "95fc7cde-0252-4bc9-bd9c-a251b8055917",
+        "6a9671a9-33cc-4b69-a0ae-92ea7c74f77d",
+        "f1ed4292-e0cc-4195-a582-1a3ed51f9a98",
+        "b43fb7bf-4c21-4f9a-81b6-a1516c31f7a2",
+        "502477f0-9ded-40ad-a86a-2e2e6178fa4f",
+        "2c4243d4-0d85-4c25-af91-e77394629a8e",
+        "6aa04bd3-ec9e-4729-85c9-7e28c8383ea1",
+        "61fecf88-b04f-4594-b8b8-706731c042a1",
+        "27bbd514-c26b-425d-bb63-e5da1142fb9c",
+        "1fb6644a-fdd8-4ce7-a10a-8d771e56877f"
+      ],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581660848414,
+      "id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "last_edited_by": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582057020000,
+      "parent_id": "c9f1e012-3d96-467f-bca2-d0cba61f2b8f",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["The title has now changed, and has "],
+          ["live-updated", [["i"]]],
+          [" in the browser!"]
+        ]
+      },
+      "type": "page",
+      "version": 248
+    }
+  },
+  "4f66eab4-830e-4899-accc-a687550757cd": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661620000,
+      "id": "4f66eab4-830e-4899-accc-a687550757cd",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661620000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Find the most common features people want"]]
+      },
+      "type": "numbered_list",
+      "version": 54
+    }
+  },
+  "502477f0-9ded-40ad-a86a-2e2e6178fa4f": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661860000,
+      "id": "502477f0-9ded-40ad-a86a-2e2e6178fa4f",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661860000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["How you would do tesla like this:"]] },
+      "type": "text",
+      "version": 36
+    }
+  },
+  "5449eb27-2855-4129-9d80-156fdf0d60ba": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661920000,
+      "id": "5449eb27-2855-4129-9d80-156fdf0d60ba",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661920000,
+      "parent_id": "6aa04bd3-ec9e-4729-85c9-7e28c8383ea1",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Can do it with a small team relatively quickly, use existing frames, batteries, and motors"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 103
+    }
+  },
+  "5567b764-ff2c-431a-aadb-2187bf791379": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662460000,
+      "id": "5567b764-ff2c-431a-aadb-2187bf791379",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662520000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Build 20 cars, make 2 mill, pay off 1 mill loan, 1,500k in cash"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 89
+    }
+  },
+  "613af8ce-6702-4ec5-a111-1d27a96b35fd": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661560000,
+      "id": "613af8ce-6702-4ec5-a111-1d27a96b35fd",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661560000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Talk to the customers about said problem"]] },
+      "type": "numbered_list",
+      "version": 51
+    }
+  },
+  "61fecf88-b04f-4594-b8b8-706731c042a1": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": ["349f2f1b-6cdb-4445-9f72-f8dbbca3d1b9"],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661920000,
+      "id": "61fecf88-b04f-4594-b8b8-706731c042a1",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661980000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Have rich person demo your car"]] },
+      "type": "numbered_list",
+      "version": 75
+    }
+  },
+  "6398b3a7-930a-4416-af71-952ebc79cee9": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1582007820000,
+      "id": "6398b3a7-930a-4416-af71-952ebc79cee9",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582007820000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "type": "text",
+      "version": 9
+    }
+  },
+  "65aac87d-3b6f-4206-9d5a-637fc34dcc87": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1582057020000,
+      "id": "65aac87d-3b6f-4206-9d5a-637fc34dcc87",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582057020000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "type": "text",
+      "version": 8
+    }
+  },
+  "6a9671a9-33cc-4b69-a0ae-92ea7c74f77d": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661740000,
+      "id": "6a9671a9-33cc-4b69-a0ae-92ea7c74f77d",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661800000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Continue growing and adding salespeople until you stop getting new customers"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 123
+    }
+  },
+  "6aa04bd3-ec9e-4729-85c9-7e28c8383ea1": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "5449eb27-2855-4129-9d80-156fdf0d60ba",
+        "b608086a-da93-42ba-8621-942f8549c26e"
+      ],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661860000,
+      "id": "6aa04bd3-ec9e-4729-85c9-7e28c8383ea1",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661980000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Make a prototype version of your fancy car"]]
+      },
+      "type": "numbered_list",
+      "version": 78
+    }
+  },
+  "7558b384-318c-401b-b1ce-b17f4bb18c33": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661560000,
+      "id": "7558b384-318c-401b-b1ce-b17f4bb18c33",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661560000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Find a problem to solve"]] },
+      "type": "numbered_list",
+      "version": 71
+    }
+  },
+  "777d7720-1e5f-4e40-a514-8353bac4c1f0": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661200000,
+      "id": "777d7720-1e5f-4e40-a514-8353bac4c1f0",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661260000,
+      "parent_id": "e7703bdf-07b3-4617-9c11-edaee05772bf",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Put fucking expensive black magic cameras in aluminum boxes "]
+        ]
+      },
+      "type": "text",
+      "version": 78
+    }
+  },
+  "77ed5e09-cd92-42ae-b38e-625f7165f22c": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "2761dc66-10ef-427d-9e29-2710b3ddc367",
+        "42a04018-8500-41cd-9176-54ba29fe36da",
+        "5567b764-ff2c-431a-aadb-2187bf791379",
+        "2e102688-4b30-48d5-b495-81b07a4179f8",
+        "880f935f-2e4b-4728-bf8d-5c02f8364fbf",
+        "9fd12ef9-347c-4f0d-9187-23e3c35b5364",
+        "21485897-f8fd-454c-b136-63803d91ac75"
+      ],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662340000,
+      "id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662580000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "properties": { "title": [["Can build 10 cars"]] },
+      "type": "numbered_list",
+      "version": 40
+    }
+  },
+  "79742e2d-4b7c-4fe3-aeec-c8a122bc72d2": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661020000,
+      "id": "79742e2d-4b7c-4fe3-aeec-c8a122bc72d2",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661020000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "type": "text",
+      "version": 16
+    }
+  },
+  "7dbd08a9-5598-441f-88c0-6cbaaf6b46f3": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662160000,
+      "id": "7dbd08a9-5598-441f-88c0-6cbaaf6b46f3",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662220000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Fancy tesla costs 100k, 50k to build, 100 cars is 5mill, borrow 500k from the bank"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 116
+    }
+  },
+  "7e2b0559-6c68-45b4-ae41-965d5977c1e7": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661620000,
+      "id": "7e2b0559-6c68-45b4-ae41-965d5977c1e7",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661620000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Repeat with multiple customers"]] },
+      "type": "numbered_list",
+      "version": 45
+    }
+  },
+  "880f935f-2e4b-4728-bf8d-5c02f8364fbf": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662580000,
+      "id": "880f935f-2e4b-4728-bf8d-5c02f8364fbf",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662580000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": { "title": [["Delivered half of cars so far"]] },
+      "type": "numbered_list",
+      "version": 60
+    }
+  },
+  "881682a5-3ec9-400a-9663-d86dccdc1b59": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": ["ad581321-f7ad-47cb-a020-9888be93a22c"],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1582057052415,
+      "id": "881682a5-3ec9-400a-9663-d86dccdc1b59",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582057020000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "properties": { "title": [["This is a new page"]] },
+      "type": "page",
+      "version": 31
+    }
+  },
+  "95fc7cde-0252-4bc9-bd9c-a251b8055917": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661740000,
+      "id": "95fc7cde-0252-4bc9-bd9c-a251b8055917",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661800000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Repeat until you can hire more salespeople"]]
+      },
+      "type": "numbered_list",
+      "version": 70
+    }
+  },
+  "9fd12ef9-347c-4f0d-9187-23e3c35b5364": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662580000,
+      "id": "9fd12ef9-347c-4f0d-9187-23e3c35b5364",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662580000,
+      "parent_id": "77ed5e09-cd92-42ae-b38e-625f7165f22c",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Build 20 cars, make 2 mill, pay off 1 mill loan, 4,500k in cash"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 14
+    }
+  },
+  "a716fb7c-bb68-4dec-906e-d086f79c05de": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661560000,
+      "id": "a716fb7c-bb68-4dec-906e-d086f79c05de",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661560000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Solve their problem"]] },
+      "type": "numbered_list",
+      "version": 28
+    }
+  },
+  "a93c9858-277e-4c4d-907f-415b95acdb54": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581660960000,
+      "id": "a93c9858-277e-4c4d-907f-415b95acdb54",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581660960000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "type": "text",
+      "version": 16
+    }
+  },
+  "aa9e4bc3-63cf-455e-9066-284b9c9a2832": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661680000,
+      "id": "aa9e4bc3-63cf-455e-9066-284b9c9a2832",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661740000,
+      "parent_id": "27810f62-95d5-433b-9559-bea2fae1ca88",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Showing is not that hard - super simple to whip up basic prototypes these days - whether it be 3d printed, squarespaced, firebased/darklanged, etc"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 212
+    }
+  },
+  "b43fb7bf-4c21-4f9a-81b6-a1516c31f7a2": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661860000,
+      "id": "b43fb7bf-4c21-4f9a-81b6-a1516c31f7a2",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661860000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "type": "text",
+      "version": 17
+    }
+  },
+  "b608086a-da93-42ba-8621-942f8549c26e": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661920000,
+      "id": "b608086a-da93-42ba-8621-942f8549c26e",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662040000,
+      "parent_id": "6aa04bd3-ec9e-4729-85c9-7e28c8383ea1",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Make it sexy as fuck - get creative with hotwheels designs"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 91
+    }
+  },
+  "bf83ef5f-efa1-4da1-82c4-b0465bc614cd": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661440000,
+      "id": "bf83ef5f-efa1-4da1-82c4-b0465bc614cd",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661560000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "It bothers me though, that they decided to take outside investment and "
+          ],
+          ["then", [["i"]]],
+          [
+            " start building the product. You should have decent enough software/hardware/electrical/business skills to put together a solid working MVP provided you grind hard enough. GET A PRODUCT! It's not that hard!! People come to work, fuck around, nothing gets done. "
+          ]
+        ]
+      },
+      "type": "text",
+      "version": 436
+    }
+  },
+  "c9f1e012-3d96-467f-bca2-d0cba61f2b8f": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "a0e8daef-036f-4d23-b199-395899bff846",
+        "9db4e7b6-a06a-4373-9865-638cb0149875",
+        "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+        "603e9031-d3f8-4ce2-906e-6d4d2c3405ec",
+        "1ac5ef5b-6cfb-40fc-8319-d7d6873645ac",
+        "ae26f80e-1d42-4c1e-9117-133b3c06caa0",
+        "b7dac2b0-336f-4ea6-898d-86a21406aab0",
+        "05cf7e60-eca1-42ee-902a-eb988f3b3666",
+        "e56708db-b280-4922-8904-ca11fa00325d",
+        "fde47266-3c22-4d39-a215-5d626c3b105d",
+        "d2e8e85a-6a04-4e70-a321-c49bcf148fc7",
+        "df450b89-30f5-4b6f-b753-42bc05c7ab10",
+        "f2d2b03f-decd-48d5-b83d-37e40d07a64d",
+        "addda4ce-2276-474b-a59c-855d3157b456",
+        "e3aee996-b106-4734-9a9a-429660b3dede",
+        "175bdecf-d966-41ed-9343-e9594a05d3e5",
+        "5a9b7268-5d00-46ab-93ca-2556514da0b6",
+        "4bea9489-d9c9-4353-b155-a485860f0fc6",
+        "f5f8a9e4-39b2-4e6e-992b-b028e63c466a",
+        "17d24d57-c559-42bc-8ffe-0d60750737da",
+        "a9d27832-db13-4110-942e-438dd1bdeb04",
+        "c2efbc8b-e9bb-415b-9acb-5de471235dac",
+        "72527db9-5983-4af5-ba65-9d7ac06d1bd5",
+        "9be20d55-2c8a-4900-b334-c821d1607a84",
+        "499b0886-574f-48cf-a7cd-b5f909af691e",
+        "6f89f4bf-7dfa-439d-84a3-cdeb1abe2e29",
+        "f2f7c2f0-0d62-44a5-9b36-9e6d9639dd07",
+        "ce95aadb-cf9b-4e82-b1b3-2b12be47df07",
+        "048f2787-a663-41a3-8628-6ea8f51ad144",
+        "33f18c57-a4d2-445c-ae9f-4690a9ae60f7",
+        "4ea6e8fd-aefa-41f5-9c62-4420cdc7c7bb",
+        "538f7df9-4d79-4057-878a-e20b1c905792",
+        "5251ceb6-4968-4549-aac6-7e5663408dc4",
+        "6e80d3a2-af1d-4730-8d41-84ce1e0a0126",
+        "1bfa5dae-d7fb-404b-a2b6-59db62627570",
+        "db520398-b63d-48e6-bf93-e46aeb5cc49c",
+        "1a6d7312-d5c6-4028-a05c-998896b00fc8",
+        "c1469181-a46c-4f93-b795-96f43ccf2c3c"
+      ],
+      "created_by": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1539909934441,
+      "format": {
+        "block_locked": false,
+        "block_locked_by": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+        "page_cover_position": 0.6,
+        "page_full_width": true,
+        "page_icon": "🌎",
+        "page_small_text": true
+      },
+      "id": "c9f1e012-3d96-467f-bca2-d0cba61f2b8f",
+      "last_edited_by": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581828120000,
+      "parent_id": "9eb2b16c-8502-469d-a4f8-1c11e1d65051",
+      "parent_table": "space",
+      "permissions": [{ "role": "editor", "type": "space_permission" }],
+      "properties": { "title": [["Home  "]] },
+      "type": "page",
+      "version": 1344
+    }
+  },
+  "d087de69-3110-4175-9499-dea2c9d74222": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": ["e03d6594-7c1f-47b2-81ed-c36e106506e3"],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661560000,
+      "id": "d087de69-3110-4175-9499-dea2c9d74222",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661620000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Ask for them to pay to use your product"]] },
+      "type": "numbered_list",
+      "version": 97
+    }
+  },
+  "d9783f8e-5f8d-4fd5-94f5-62af0ba1f3ce": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661560000,
+      "id": "d9783f8e-5f8d-4fd5-94f5-62af0ba1f3ce",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661680000,
+      "parent_id": "27810f62-95d5-433b-9559-bea2fae1ca88",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Might require showing them your solution - demo something if you don't have a full-fledged mvp"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 134
+    }
+  },
+  "da5b0ef2-2539-483f-8574-f06536c5354a": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661440000,
+      "id": "da5b0ef2-2539-483f-8574-f06536c5354a",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661440000,
+      "parent_id": "e7703bdf-07b3-4617-9c11-edaee05772bf",
+      "parent_table": "block",
+      "type": "text",
+      "version": 16
+    }
+  },
+  "dcdc9d30-39c7-4782-8bbb-b4f23a15f12d": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1582007820000,
+      "id": "dcdc9d30-39c7-4782-8bbb-b4f23a15f12d",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1582007820000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [["Interview the people, get the customers, meet the demand"]]
+      },
+      "type": "text",
+      "version": 75
+    }
+  },
+  "e026932e-fe8f-41eb-a9b2-cd8bcd0ab9a1": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581662100000,
+      "id": "e026932e-fe8f-41eb-a9b2-cd8bcd0ab9a1",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581662160000,
+      "parent_id": "1fb6644a-fdd8-4ce7-a10a-8d771e56877f",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          ["Borrow 1/10 the cost of production from a bank as a microloan"]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 81
+    }
+  },
+  "e03d6594-7c1f-47b2-81ed-c36e106506e3": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661620000,
+      "id": "e03d6594-7c1f-47b2-81ed-c36e106506e3",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661620000,
+      "parent_id": "d087de69-3110-4175-9499-dea2c9d74222",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Start with limited features and ask them what features they would use"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 96
+    }
+  },
+  "e7703bdf-07b3-4617-9c11-edaee05772bf": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "content": [
+        "2fa60295-65d9-4042-b69e-1ecaed950879",
+        "777d7720-1e5f-4e40-a514-8353bac4c1f0",
+        "1a520607-bf31-4d68-bc18-94651e40b9d4",
+        "fb059cae-2977-481c-b3e4-0a790c4834ca",
+        "da5b0ef2-2539-483f-8574-f06536c5354a"
+      ],
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661020000,
+      "id": "e7703bdf-07b3-4617-9c11-edaee05772bf",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661440000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Take quartz for example:"]] },
+      "type": "text",
+      "version": 57
+    }
+  },
+  "ee65b8dd-ecf3-4b48-824f-fecdb3ea4924": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661620000,
+      "id": "ee65b8dd-ecf3-4b48-824f-fecdb3ea4924",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661620000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": { "title": [["Implement those features"]] },
+      "type": "numbered_list",
+      "version": 33
+    }
+  },
+  "f1ed4292-e0cc-4195-a582-1a3ed51f9a98": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661800000,
+      "id": "f1ed4292-e0cc-4195-a582-1a3ed51f9a98",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661860000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "Make sure your income doesn't start to decline - you started doing something wrong"
+          ]
+        ]
+      },
+      "type": "numbered_list",
+      "version": 149
+    }
+  },
+  "f5b1bfa0-ab78-4758-b886-591ad95ec666": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581660960000,
+      "id": "f5b1bfa0-ab78-4758-b886-591ad95ec666",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661020000,
+      "parent_id": "46f9f915-482a-43ad-b0ca-7ca4005255d9",
+      "parent_table": "block",
+      "properties": {
+        "title": [
+          [
+            "I'm stumped why so many people think they need millions of dollars of funding to get the first customer. Sure, you're a startup, but you should have some plan of making money. Hell, instead of whoring out 25-35% of my company to VCs, I would just make an incredibly large option pool for the employees. If they work hard, they'll make "
+          ],
+          ["a lot", [["i"]]],
+          [" more money than if we didn't take outside investment."]
+        ]
+      },
+      "type": "text",
+      "version": 430
+    }
+  },
+  "fb059cae-2977-481c-b3e4-0a790c4834ca": {
+    "role": "editor",
+    "value": {
+      "alive": true,
+      "created_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "created_by_table": "notion_user",
+      "created_time": 1581661380000,
+      "id": "fb059cae-2977-481c-b3e4-0a790c4834ca",
+      "last_edited_by_id": "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+      "last_edited_by_table": "notion_user",
+      "last_edited_time": 1581661440000,
+      "parent_id": "e7703bdf-07b3-4617-9c11-edaee05772bf",
+      "parent_table": "block",
+      "properties": { "title": [["Hire good engineers"]] },
+      "type": "text",
+      "version": 63
+    }
+  }
+}

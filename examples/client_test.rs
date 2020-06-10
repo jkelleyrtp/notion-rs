@@ -1,9 +1,5 @@
-use {
-    notion_rs::client,
-};
-
-
+use notion_rs::client;
 
 fn main() {
-    println!("Hello world!", );
+    println!("Hello world!",);
 }

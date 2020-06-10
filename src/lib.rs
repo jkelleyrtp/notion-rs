@@ -1,17 +1,12 @@
-// use {
-//     client,
-//     blockvariants
-// };
+pub mod block;
+pub mod blocks;
+pub mod cache;
+pub mod cfg;
+pub mod client;
 
-
-pub mod notionclient;
-pub mod query;
-pub mod blockvariants;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+pub mod prelude {
+    use super::*;
+    pub use crate::{
+        block::NotionBlock, blocks::BlockType, client::API_Endpoints, client::NotionClient,
+    };
 }
