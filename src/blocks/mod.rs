@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 mod page;
 use page::Page;
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Deserialize, Serialize)]
 #[allow(non_camel_case_types)]
 pub enum BlockType {
     code,
@@ -35,11 +35,7 @@ pub enum BlockType {
 }
 
 impl BlockType {
-    pub fn from_props(
-        fieldtype: &str,
-        properties: Option<serde_json::Value>,
-        content: Option<Vec<String>>,
-    ) -> Result<Self> {
+    pub fn from_props(fieldtype: &str, properties: Option<serde_json::Value>) -> Result<Self> {
         let a = match fieldtype {
             "page" => BlockType::page,
             "code" => BlockType::code,

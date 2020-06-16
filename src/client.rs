@@ -38,8 +38,6 @@ impl NotionClient {
                 reqwest::header::COOKIE,
                 format!("token_v2={}", self.cfg.auth_token),
             );
-
-        println!("my request: {:?}", &req);
         req.send().await
     }
 
@@ -50,6 +48,17 @@ impl NotionClient {
             "id": "",
             "limit": limit
         });
+    }
+
+    async fn get_page(&mut self, url: &str) -> Result<GetBlocksResponse> {
+        let id = url.rsplit('-').next().context("Oh no!")?;
+        let page_id = uuid::Uuid::parse_str(id)?;
+        let a: GetBlocksResponse = self
+            .get_block(page_id)
+            .await
+            .json::<GetBlocksResponse>()
+            .await?;
+        Ok(a)
     }
 
     async fn get_block(&mut self, page_id: Uuid) -> reqwest::Response {
@@ -69,41 +78,34 @@ impl NotionClient {
     }
 }
 
+impl Default for NotionClient {
+    fn default() -> Self {
+        NotionClient::new(ClientConfig::default())
+    }
+}
+
 impl From<ClientConfig> for NotionClient {
     fn from(cfg: ClientConfig) -> Self {
         NotionClient::new(cfg)
     }
 }
 
-use crate::util::{get_all_block_types, GetBlocksResponse};
+use crate::util::GetBlocksResponse;
+
 #[tokio::test]
 async fn test_notion_client() -> Result<()> {
-    // Make a notion client and download the "Whats new page"
     let page =
         "https://www.notion.so/jonathankelley/KitchenSink-Test-eb4923253d154dd5adf8a80d773acb15";
-    let id = page.rsplit('-').next().context("Oh no!")?;
-    let a = uuid::Uuid::parse_str(id)?;
 
-    let cfg = ClientConfig::from_file("Notion.toml").unwrap();
-    let mut client = NotionClient::new(cfg);
+    let mut client = NotionClient::new(ClientConfig::from_file("Notion.toml")?);
 
-    let res = client.get_block(a).await;
-
-    let my_blocks: GetBlocksResponse = res
-        .json::<GetBlocksResponse>()
-        .await
-        .expect("Couldnt unwrap my blocks");
-
-    let a: HashMap<String, NotionBlock> = my_blocks
+    let my_blocks: GetBlocksResponse = client.get_page(page).await?;
+    my_blocks
         .recordMap
         .block
-        .as_object()
-        .unwrap()
         .iter()
-        .map(|(k, v)| (k.clone(), serde_json::from_value(v.clone()).unwrap()))
-        .collect();
-
-    println!("All my block types: {:#?}", a);
+        .filter(|(k, v)| v.block_properties_type == BlockType::page)
+        .for_each(|(k, v)| println!("{:#?}: {:#?}", v.block_properties_type, v.content));
 
     Ok(())
 }

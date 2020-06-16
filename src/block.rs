@@ -7,10 +7,11 @@ use {
     uuid::Uuid,
 };
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct NotionBlock {
     pub id: String,
     pub block_properties_type: BlockType,
+    pub content: Option<Vec<String>>,
 }
 
 impl<'de> serde::Deserialize<'de> for NotionBlock {
@@ -61,11 +62,12 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
                 ..
             } => {
                 let props: BlockType =
-                    BlockType::from_props(block_type.as_str(), properties, content).unwrap();
+                    BlockType::from_props(block_type.as_str(), properties).unwrap();
 
                 NotionBlock {
                     id,
                     block_properties_type: props,
+                    content,
                 }
             }
         };
