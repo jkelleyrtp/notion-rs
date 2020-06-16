@@ -3,61 +3,92 @@
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
 mod page;
-use page::PageInfo;
+use page::Page;
 
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
+#[derive(Debug, PartialEq)]
+#[allow(non_camel_case_types)]
 pub enum BlockType {
-    Page(PageInfo),
+    code,
+    to_do,
+    sub_sub_header,
+    bookmark,
+    bulleted_list,
+    factory,
+    image,
+    divider,
+    page,
+    table_of_contents,
+    sub_header,
+    numbered_list,
+    equation,
+    text,
+    breadcrumb,
+    toggle,
+    callout,
+    header,
+    quote,
 
-    // text(NotionBlocks::text),
+    Unregistered(String),
 
-    // code(NotionBlocks::code),
+    // #[serde(other)]
+    Unknown,
+}
 
-    // numbered_list(NotionBlocks::numbered_list),
+impl BlockType {
+    pub fn from_props(
+        fieldtype: &str,
+        properties: Option<serde_json::Value>,
+        content: Option<Vec<String>>,
+    ) -> Result<Self> {
+        let a = match fieldtype {
+            "page" => BlockType::page,
+            "code" => BlockType::code,
+            "to_do" => BlockType::to_do,
+            "sub_sub_header" => BlockType::sub_sub_header,
+            "bookmark" => BlockType::bookmark,
+            "bulleted_list" => BlockType::bulleted_list,
+            "factory" => BlockType::factory,
+            "image" => BlockType::image,
+            "divider" => BlockType::divider,
+            "table_of_contents" => BlockType::table_of_contents,
+            "sub_header" => BlockType::sub_header,
+            "numbered_list" => BlockType::numbered_list,
+            "equation" => BlockType::equation,
+            "text" => BlockType::text,
+            "breadcrumb" => BlockType::breadcrumb,
+            "toggle" => BlockType::toggle,
+            "callout" => BlockType::callout,
+            "header" => BlockType::header,
+            "quote" => BlockType::quote,
+            _ => BlockType::Unknown,
+        };
 
-    // factory(NotionBlocks::factory),
-
-    // equation(NotionBlocks::equation),
-
-    // sub_header(NotionBlocks::sub_header),
-
-    // quote(NotionBlocks::quote),
-
-    // file(NotionBlocks::file),
-
-    // bulleted_list(NotionBlocks::bulleted_list),
-
-    // embed(NotionBlocks::embed),
-
-    // callout(NotionBlocks::callout),
-
-    // breadcrumb(NotionBlocks::breadcrumb),
-
-    // bookmark(NotionBlocks::bookmark),
-
-    // audio(NotionBlocks::audio),
-
-    // divider(NotionBlocks::divider),
-
-    // image(NotionBlocks::image),
-
-    // toggle(NotionBlocks::toggle),
-
-    // to_do(NotionBlocks::to_do),
-
-    // table_of_contents(NotionBlocks::table_of_contents),
-
-    // header(NotionBlocks::header),
-
-    // sub_sub_header(NotionBlocks::sub_sub_header),
-    unregistered(String),
-
-    #[serde(other)]
-    unknown,
+        Ok(a)
+    }
 }
 
 impl Default for BlockType {
     fn default() -> Self {
-        BlockType::unknown
+        BlockType::Unknown
     }
 }
+
+// "code",
+// "to_do",
+// "sub_sub_header",
+// "bookmark",
+// "bulleted_list",
+// "factory",
+// "image",
+// "divider",
+// "page",
+// "table_of_contents",
+// "sub_header",
+// "numbered_list",
+// "equation",
+// "text",
+// "breadcrumb",
+// "toggle",
+// "callout",
+// "header",
+// "quote",

@@ -5,12 +5,15 @@ authors = ["Jonathan Kelley <jkelleyrtp@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-reqwest = "0.10.6"
+reqwest = {version="0.10", features=["cookies", "json"]}
 serde = "1.0.111"
-serde_json = "1.0.55"
+serde_json = {version="1.0.55", features=["preserve_order"]}
 anyhow = "1.0.31"
 petgraph = "0.5.1"
 toml = "0.5.6"
+tokio = {version = "0.2",features = ["test-util", "macros"] }
+uuid = {version="0.8.1", features=["v4"]}
+
 
 [dev-dependencies]
 clap = "2.33.1"
