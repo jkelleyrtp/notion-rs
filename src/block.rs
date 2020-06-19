@@ -11,6 +11,7 @@ use {
 pub struct NotionBlock {
     pub id: String,
     pub block_properties_type: BlockType,
+    pub properties: Option<serde_json::Value>,
     pub content: Option<Vec<String>>,
 }
 
@@ -50,6 +51,8 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
 
         let raw_in: RawInput = RawInput::deserialize(deserializer)?;
 
+        println!("pre-deserialized: {:#?}", raw_in.value);
+
         let raw_block: RawBlock = serde_json::from_value(raw_in.value).unwrap();
 
         let outblock = match raw_block {
@@ -61,12 +64,12 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
                 content,
                 ..
             } => {
-                let props: BlockType =
-                    BlockType::from_props(block_type.as_str(), properties).unwrap();
+                let props: BlockType = BlockType::from_props(block_type.as_str()).unwrap();
 
                 NotionBlock {
                     id,
                     block_properties_type: props,
+                    properties: properties,
                     content,
                 }
             }

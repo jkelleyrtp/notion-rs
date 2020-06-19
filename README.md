@@ -1,67 +1,52 @@
-# Notion-rs
+# notion-rs
 
 A wasm-friendly rust implementation of the Notion.so unofficial API.
 
-Give an auth token and a 
+
+
+Generate complex queries of your notion workspace!
 
 
 
+```rust
+type BlocksView = IndexMap<Uuid, &mut NotionBlock>;
 
+// Configuration is stored in a notions.toml file
+// Make sure to ignore the contents so your keys don't get leaked
+let client = NotionClient::from_file("notion.toml")?;
 
+// The blocksview is a collection of references to notionblocks
+// You cannot own a notion block, but you can get a mutable reference to it
+// You can get a mutable reference to a notion block
+// You can sync modifcation to a notion block 
+let myblocks: BlocksView = client
+                            .query_builder()
+                            .collection_view("12345") // collection query
+                            .view_id("123")
+                            .filter_column("bill", TagFilter::Matches(""))
+                            .filter_column("date", TagFilter::Matches(""))
+                            .post()
+                            .await?;
+            
+// Label all equations on a page!
+myblocks
+    .iter()
+    .filter(|(id, block)| block.block_type == BlockTypes::equation)
+    .enumerate()
+    .for_each(|(eqnID, (id, block))| {
+        match block.block_type {
+            BlockTypes::Equation(eqn) =>{
+                // Automatically sends a "needs update" flag to the client
+                eqn.change_text(|f: String| format!("{:} {:}", f, eqnID) )
+            }
+            _ => {}
+        }
+    }); 
 
+// Updates blocks that have been changed via methods
+client
+    .update()
+    .await?;
+```
 
-## Not yet supported:
-----
-Delievers a Graph-QL like experience using Queries and Mutations.
-
-
-Post is called several times:
-- loadUserContent
-- submitTransaction
-- searchPages
-- searchBlocks
-
-
-Question:
-
-Should it be:
-structs vs enums
-enum as a field
-enum as the type
-
-
-trait block {
-    get_id()
-}
-
-struct block_info {
-
-}
-
-struct VideoBlock {
-    block_info: block_info
-    id: String,   
-}
-
-impl block for VideoBlock {
-    block.get_info() { self.block_info }
-}
-
-
-TODO:
-- [x] Get individual block
-- [ ] Coerce block into a block struct
-- [ ] Add block to cache
-- [ ] Enable graph network for cache
-- [ ] Save images/content to dir
-- [ ] Consider trait/enum system for types of blocks
-
-
-
-Roadmap:
-- [ ] Caching requests
-- [ ] Subscribe to changes 
-- [ ] Use in npm
-
-- [ ] Graph-QL like usage (using the Graph-QL Rust Client)
 

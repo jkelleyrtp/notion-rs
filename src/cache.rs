@@ -1,8 +1,4 @@
-use crate::prelude::NotionBlock;
-use petgraph::Graph;
-use std::collections::HashMap;
-use std::time;
-// use crate::
+use {crate::prelude::NotionBlock, petgraph::Graph, std::collections::HashMap, std::time};
 
 pub struct RecordCache {
     records: HashMap<String, NotionBlock>,

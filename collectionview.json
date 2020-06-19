@@ -1,0 +1,52 @@
+pre-deserialized: Object({
+    "id": String(
+        "f702e06e-e978-48f6-b082-1ad55fc13d4a",
+    ),
+    "version": Number(
+        7,
+    ),
+    "type": String(
+        "collection_view",
+    ),
+    "view_ids": Array([
+        String(
+            "758c36fa-0714-4700-9855-4dc68041e3c1",
+        ),
+    ]),
+    "collection_id": String(
+        "56952e39-e8ca-4358-a38c-6787c16f9f14",
+    ),
+    "created_time": Number(
+        1592455809295,
+    ),
+    "last_edited_time": Number(
+        1592455800000,
+    ),
+    "parent_id": String(
+        "9ca5c38a-8394-4d29-bb83-188d26402bdb",
+    ),
+    "parent_table": String(
+        "block",
+    ),
+    "alive": Bool(
+        true,
+    ),
+    "created_by_table": String(
+        "notion_user",
+    ),
+    "created_by_id": String(
+        "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+    ),
+    "last_edited_by_table": String(
+        "notion_user",
+    ),
+    "last_edited_by_id": String(
+        "e7ada895-daf9-4a77-84d3-7e136e3c2ea1",
+    ),
+    "shard_id": Number(
+        413777,
+    ),
+    "space_id": String(
+        "9eb2b16c-8502-469d-a4f8-1c11e1d65051",
+    ),
+})

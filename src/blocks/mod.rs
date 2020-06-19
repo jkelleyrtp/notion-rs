@@ -28,6 +28,8 @@ pub enum BlockType {
     header,
     quote,
 
+    collection_view,
+
     Unregistered(String),
 
     // #[serde(other)]
@@ -35,7 +37,7 @@ pub enum BlockType {
 }
 
 impl BlockType {
-    pub fn from_props(fieldtype: &str, properties: Option<serde_json::Value>) -> Result<Self> {
+    pub fn from_props(fieldtype: &str) -> Result<Self> {
         let a = match fieldtype {
             "page" => BlockType::page,
             "code" => BlockType::code,
@@ -56,7 +58,9 @@ impl BlockType {
             "callout" => BlockType::callout,
             "header" => BlockType::header,
             "quote" => BlockType::quote,
-            _ => BlockType::Unknown,
+            "collection_view" => BlockType::collection_view,
+
+            _ => BlockType::Unregistered(fieldtype.to_string()),
         };
 
         Ok(a)

@@ -12,7 +12,9 @@ anyhow = "1.0.31"
 petgraph = "0.5.1"
 toml = "0.5.6"
 tokio = {version = "0.2",features = ["test-util", "macros"] }
-uuid = {version="0.8.1", features=["v4"]}
+uuid = {version="0.8.1", features=["v4", "serde"]}
+indexmap = {version="1.4.0", features=["serde-1"]}
+async-trait = "0.1.35"
 
 
 [dev-dependencies]

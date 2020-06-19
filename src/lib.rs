@@ -1,8 +1,11 @@
 pub mod block;
 pub mod blocks;
+pub mod blocksview;
 pub mod cache;
 pub mod cfg;
 pub mod client;
+pub mod collection;
+pub mod query;
 pub mod util;
 
 pub mod prelude {
