@@ -2,15 +2,9 @@
 
 A wasm-friendly rust implementation of the Notion.so unofficial API.
 
-
-
 Generate complex queries of your notion workspace!
 
-
-
 ```rust
-type BlocksView = IndexMap<Uuid, &mut NotionBlock>;
-
 // Configuration is stored in a notions.toml file
 // Make sure to ignore the contents so your keys don't get leaked
 let client = NotionClient::from_file("notion.toml")?;
@@ -50,3 +44,53 @@ client
 ```
 
 
+## Mutations
+Very basic mutation support at the moment, currently done by mutating a block in an ownership scope;
+
+```rust
+client.modify("f1366603-f22f-40cf-bbe4-dd48dc9a023c", |block| {
+    match &mut block.data {
+        BlockData::Header(header) => {
+            header.title = "New header!";
+        }
+    }
+    block
+})
+```
+
+Aiming for something more along the lines of:
+```rust
+let mut myblock = client.get_mut::<HeaderBlock>("f1366603-f22f-40cf-bbe4-dd48dc9a023c")?
+```
+
+
+
+
+## Support
+Current support is:
+
+| Block        | Read  | Write |
+| ------------ | :---: | ----: |
+| Header       |   x   |       |
+| SubHeader    |   x   |       |
+| SubSubHeader |   x   |       |
+| Quote        |   x   |       |
+| Code         |   x   |       |
+| ToDo         |   x   |       |
+| Bookmark     |   x   |       |
+| BulletedList |   x   |       |
+| Image        |   x   |       |
+| Divider      |   x   |       |
+| ToC          |   x   |       |
+| Breadcrumb   |   x   |       |
+| Page         |   x   |       |
+| NumberedList |   x   |       |
+| Text         |   o   |       |
+| Equation     |   o   |       |
+| Toggle       |   o   |       |
+| Callout      |   o   |       |
+| Factory      |   o   |       |
+| Collection   |   o   |       |
+
+`x = fully supported`
+`o = partially supported`

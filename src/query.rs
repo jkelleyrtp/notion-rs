@@ -1,87 +1,73 @@
 //! A query to make to the notion client
-use crate::client::NotionClient;
-use crate::util::GetBlocksResponse;
-use anyhow::{Context, Result};
-use async_trait::async_trait;
-use serde::{Deserialize, Serialize};
+use anyhow::Result;
 use serde_json::json;
-use std::sync::{Arc, RwLock};
 use uuid::Uuid;
 
-#[async_trait(?Send)]
-pub trait NotionQuery {
-    fn get_client_link(&self) -> Option<Arc<RwLock<NotionClient>>>;
-
-    async fn post(self) -> reqwest::Response
-    where
-        Self: Sized,
-    {
-        let link = self.get_client_link().context("").unwrap();
-        let mut b = link.write().unwrap();
-        b.post_query(self).await.unwrap()
-    }
+pub enum NotionQuery {
+    GetPage { page_id: Uuid },
+    GetBlock { block_id: Uuid },
+    GetCollection { collection_id: Uuid },
 }
 
-pub mod NotionQueryImpls {
-    use super::*;
-
-    /// Start a new GetBlock query
-    pub fn get_block(block_id: Uuid) -> Result<GetBlock> {
-        Ok(GetBlock { block_id })
-    }
-
-    /// Start a new GetPage query
-    pub fn get_page(url: &str) -> Result<GetPage> {
-        let id = url.rsplit('-').next().context("Oh no!")?;
-        let page_id = uuid::Uuid::parse_str(id)?;
-
-        Ok(GetPage {
-            page_url: url.to_string(),
-            page_id,
+impl NotionQuery {
+    /// Returns the contents of a notion page
+    pub fn from_url(url: &str) -> Result<Self> {
+        Ok(NotionQuery::GetPage {
+            page_id: link_to_uuid(url)?,
         })
     }
 
-    pub struct GetBlock {
-        block_id: Uuid,
-    }
+    pub fn to_data(self) -> serde_json::Value {
+        use NotionQuery::*;
+        match self {
+            GetCollection { collection_id } => json!({
+                "collectionId": collection_id.to_string(),
+                "collectionViewId": "",
+                "loader": {
+                    "limit": 10000,
+                    "loadContentCover": true,
+                    "query": "",
+                    "userLocale": "en",
+                    "userTimeZone": "",
+                    "type": "type",
+                },
+                "query": {
+                    "aggregate": "",
+                    "filter": "",
+                    "filter_operator": "",
+                    "sort": "",
+                },
+            }),
 
-    pub struct GetPage {
-        page_url: String,
-        page_id: Uuid,
-    }
+            GetBlock { block_id } => json!({
+                "pageId": block_id.to_hyphenated().to_string(),
+                "limit": 100000,
+                "cursor": {"stack": []},
+                "chunkNumber": 0,
+                "verticalColumns": false,
+            }),
 
-    impl GetPage {
-        fn url() {}
+            GetPage { page_id } => json!({
+                "pageId": page_id.to_hyphenated().to_string(),
+                "limit": 100000,
+                "cursor": {"stack": []},
+                "chunkNumber": 0,
+                "verticalColumns": false,
+            }),
+        }
     }
+}
+
+fn link_to_uuid(url: &str) -> Result<Uuid> {
+    let chunks = url.split("/");
+    let slug = chunks.last().unwrap();
+    let id = slug.split("-").last().unwrap();
+
+    // TODO @Jon remap the error to the crate's error type
+    Ok(Uuid::parse_str(id)?)
 }
 
 mod tests {
     #[test]
-    fn test_query() {
-        // let data = json!({
-        //     "collectionId": collection_id.to_string(),
-        //     "collectionViewId": "",
-        //     "loader": {
-        //         "limit": 10000,
-        //         "loadContentCover": true,
-        //         "query": "",
-        //         "userLocale": "en",
-        //         "userTimeZone": "",
-        //         "type": "type",
-        //     },
-        //     "query": {
-        //         "aggregate": "",
-        //         "filter": "",
-        //         "filter_operator": "",
-        //         "sort": "",
-        //     },
-        // });
-        // let data = json!({
-        //     "pageId": page_id.to_hyphenated().to_string(),
-        //     "limit": 100000,
-        //     "cursor": {"stack": []},
-        //     "chunkNumber": 0,
-        //     "verticalColumns": false,
-        // });
-    }
+    fn test_query() {}
 }

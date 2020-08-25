@@ -1,30 +1,13 @@
-use anyhow::{anyhow, Result};
 use serde::{Deserialize, Serialize};
-#[derive(Debug, PartialEq, Deserialize)]
+
+#[derive(Debug, PartialEq, Deserialize, Serialize)]
 pub struct Page {
     title: Vec<Vec<String>>,
     content: Option<Vec<String>>,
 }
 
-impl Page {}
-
-// impl<'de> Deserialize<'de> for Page {
-//     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-//     where
-//         D: serde::Deserializer<'de>,
-//     {
-//         #[derive(Debug, Serialize, Deserialize)]
-//         struct Raw {
-//             properties: Option<Vec<Vec<String>>>,
-//             content: serde_json::Value,
-//         }
-
-//         let thisraw: Raw = Raw::deserialize(deserializer)?;
-//     }
-// }
-
 #[test]
-fn test_page_de() -> Result<()> {
+fn test_page_de() -> anyhow::Result<()> {
     let input = serde_json::json!({
         "properties": { "title": [["KitchenSink Test"]] },
         "content": [

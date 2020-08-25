@@ -1,18 +1,21 @@
-use {
-    crate::prelude::BlockType,
-    serde::{Deserialize, Serialize},
-    serde_json,
-    serde_json::json,
-    std::collections::HashMap,
-    uuid::Uuid,
-};
+mod collection;
+mod data;
+mod equation;
+mod page;
+mod raw;
+mod text;
 
-#[derive(Debug, Serialize)]
+use anyhow::{anyhow, Result};
+pub use data::BlockData;
+use equation::NotionEquation;
+use raw::{compress_properties, RawBlock, RawInput};
+use serde_json::json;
+use {serde::Serialize, serde_json};
+
+#[derive(Debug, Serialize, PartialEq)]
 pub struct NotionBlock {
     pub id: String,
-    pub block_properties_type: BlockType,
-    pub properties: Option<serde_json::Value>,
-    pub content: Option<Vec<String>>,
+    pub data: BlockData,
 }
 
 impl<'de> serde::Deserialize<'de> for NotionBlock {
@@ -20,62 +23,37 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
     where
         D: serde::Deserializer<'de>,
     {
-        use serde::de::Error;
-
-        #[derive(Serialize, Deserialize, Debug)]
-        pub struct RawInput {
-            pub role: String,
-            pub value: serde_json::Value,
-        }
-
-        #[derive(Serialize, Deserialize, Debug)]
-        pub struct RawBlock {
-            pub id: String,
-            pub version: u32,
-            #[serde(alias = "type")]
-            pub block_type: String,
-            pub properties: Option<serde_json::Value>,
-            pub content: Option<Vec<String>>,
-            pub permissions: Option<serde_json::Value>,
-            pub created_time: i64,
-            pub last_edited_time: i64,
-            pub parent_id: String,
-            pub parent_table: String,
-            pub alive: bool,
-            pub created_by_table: String,
-            pub created_by_id: String,
-            pub last_edited_by_id: String,
-            pub shard_id: Option<i64>,
-            pub space_id: Option<String>,
-        }
-
         let raw_in: RawInput = RawInput::deserialize(deserializer)?;
 
-        println!("pre-deserialized: {:#?}", raw_in.value);
+        let RawBlock {
+            id,
+            block_type,
+            properties,
+            content,
+            ..
+        } = serde_json::from_value(raw_in.value).unwrap();
 
-        let raw_block: RawBlock = serde_json::from_value(raw_in.value).unwrap();
+        let compressed_props = compress_properties(properties.unwrap(), content).unwrap();
 
-        let outblock = match raw_block {
-            RawBlock {
-                id,
-                version,
-                block_type,
-                properties,
-                content,
-                ..
-            } => {
-                let props: BlockType = BlockType::from_props(block_type.as_str()).unwrap();
+        let inter = json!({
+          "type": block_type,
+          "properties": compressed_props,
+        });
 
-                NotionBlock {
-                    id,
-                    block_properties_type: props,
-                    properties: properties,
-                    content,
-                }
-            }
-        };
+        let data: BlockData = serde_json::from_value(inter).unwrap();
+
+        let outblock = NotionBlock { id, data };
 
         Ok(outblock)
+    }
+}
+
+impl NotionBlock {
+    pub fn to_equation(&mut self) -> Result<&mut NotionEquation> {
+        match &mut self.data {
+            BlockData::Equation(eqn) => Ok(eqn),
+            _ => Err(anyhow!("Invalid type conversion")),
+        }
     }
 }
 
@@ -116,7 +94,20 @@ fn test_serde() {
       }
     });
 
-    let b: NotionBlock = serde_json::from_value(block).unwrap();
+    let block: NotionBlock = serde_json::from_value(block).unwrap();
 
-    println!("Deserialize is {:#?}", b);
+    assert_eq!(block.id.as_str(), "eb492325-3d15-4dd5-adf8-a80d773acb15");
+    assert_eq!(
+        block.data,
+        BlockData::Page {
+            title: "KitchenSink Test".to_string(),
+            content: vec![
+                uuid::Uuid::parse_str("f1366603-f22f-40cf-bbe4-dd48dc9a023c").unwrap(),
+                uuid::Uuid::parse_str("59ca4846-c2f5-4938-9c9f-6a85c175dec8").unwrap(),
+                uuid::Uuid::parse_str("ab37cc91-5cee-473e-a559-73effa5e8b7b").unwrap(),
+                uuid::Uuid::parse_str("63ebaf2b-de3b-415f-826c-0a842b3145f7").unwrap(),
+                uuid::Uuid::parse_str("87ab67ca-8919-4086-98ba-35714248d088").unwrap()
+            ]
+        }
+    );
 }

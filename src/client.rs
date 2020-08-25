@@ -1,14 +1,8 @@
 use {
-    crate::cache,
-    crate::prelude::{BlockType, ClientConfig, NotionBlock, NotionEndpoint},
     crate::query::NotionQuery,
-    anyhow::{anyhow, Context, Result},
-    reqwest, serde,
-    serde::{Deserialize, Serialize},
-    serde_json,
-    serde_json::json,
-    std::collections::HashMap,
-    uuid::Uuid,
+    crate::{ClientConfig, NotionEndpoint},
+    anyhow::{anyhow, Result},
+    reqwest, serde_json,
 };
 
 pub struct NotionClient {
@@ -17,84 +11,52 @@ pub struct NotionClient {
 }
 
 impl NotionClient {
-    fn new(cfg: ClientConfig) -> NotionClient {
-        let client = reqwest::Client::builder()
-            .cookie_store(true)
-            .build()
-            .unwrap();
-
-        NotionClient { cfg, client }
-    }
-
-    fn from_cfg_file() -> NotionClient {
-        let cfg = ClientConfig::from_file("Notion.toml").unwrap_or_default();
-        Self::new(cfg)
+    pub fn builder() -> ClientConfig {
+        ClientConfig::default()
     }
 
     pub async fn post(
         &mut self,
         endpoint: NotionEndpoint,
         data: serde_json::value::Value,
-    ) -> Result<reqwest::Response, reqwest::Error> {
+    ) -> Result<reqwest::Response> {
+        let token = self.cfg.auth_token.as_ref().ok_or(anyhow!("No auth token"));
         self.client
-            .post(endpoint.to_string().as_str())
+            .post(endpoint.as_str())
             .json(&data)
-            .header(
-                reqwest::header::COOKIE,
-                format!("token_v2={}", self.cfg.auth_token),
-            )
+            .header(reqwest::header::COOKIE, format!("token_v2={}", token?))
             .send()
             .await
+            .map_err(|_| anyhow!("failed to post"))
     }
 
-    pub async fn post_query(&mut self, query: impl NotionQuery) -> Result<reqwest::Response> {
-        let data = json!({});
-
-        self.post(NotionEndpoint::loadPageChunk, data)
+    pub async fn post_query(&mut self, query: NotionQuery) -> Result<reqwest::Response> {
+        self.post(NotionEndpoint::LoadPageChunk, query.to_data())
             .await
-            .map_err(|f| anyhow!("hello!"))
+            .map_err(|_f| anyhow!("hello!"))
     }
 }
 
-impl Default for NotionClient {
-    fn default() -> Self {
-        NotionClient::new(ClientConfig::default())
-    }
-}
+#[tokio::test]
+async fn test_notion_client() -> Result<()> {
+    let page =
+        "https://www.notion.so/jonathankelley/KitchenSink-Test-eb4923253d154dd5adf8a80d773acb15";
 
-impl From<ClientConfig> for NotionClient {
-    fn from(cfg: ClientConfig) -> Self {
-        NotionClient::new(cfg)
-    }
-}
+    // Make sure to use ENV vars to test
+    // let token = std::env::var("NOTION_TOKEN_V2")?;
+    let token = "6b28acdd4833c13eac5980ce925691146fb218faeaaee0519ca737d538b264afa3821e630e4b215619fc8d18c05117276b77d1944c3b1618612ece054b437d83e28b7b4427e5a71912e912607254";
 
-use crate::util::GetBlocksResponse;
-mod tests {
-    use super::*;
+    let mut client = NotionClient::builder().token_v2(token).build();
 
-    #[tokio::test]
-    async fn test_notion_client() -> Result<()> {
-        let page = "https://www.notion.so/jonathankelley/KitchenSink-Test-eb4923253d154dd5adf8a80d773acb15";
+    let myblocks = client
+        .post_query(NotionQuery::from_url(page)?)
+        .await?
+        .json::<serde_json::Value>()
+        .await?;
 
-        let mut client: NotionClient = NotionClient::new(ClientConfig::from_file("Notion.toml")?);
+    // println!("My blocks {:#?}", myblocks);
 
-        // let my_blocks: GetBlocksResponse = client.get_page(page).await?;
+    println!("{}", serde_json::to_string_pretty(&myblocks).unwrap());
 
-        // my_blocks.recordMap.block.iter().for_each(|(k, v)| {
-        //     println!(
-        //         "{:#?}: {:#?} - {:#?}",
-        //         v.block_properties_type, v.content, v.properties
-        //     )
-        // });
-
-        Ok(())
-    }
-
-    #[tokio::test]
-    async fn test_query_builder() -> Result<()> {
-        let mut client = NotionClient::from_cfg_file();
-        let page = "https://www.notion.so/jonathankelley/KitchenSink-Test-eb4923253d154dd5adf8a80d773acb15";
-
-        Ok(())
-    }
+    Ok(())
 }

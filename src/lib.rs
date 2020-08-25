@@ -1,17 +1,25 @@
-pub mod block;
-pub mod blocks;
-pub mod blocksview;
-pub mod cache;
-pub mod cfg;
-pub mod client;
-pub mod collection;
-pub mod query;
-pub mod util;
+mod block;
+mod cfg;
+mod client;
+mod nbref;
+mod query;
+mod util;
 
-pub mod prelude {
-    use super::*;
-    pub use crate::{
-        block::NotionBlock, blocks::BlockType, cfg::ClientConfig, cfg::NotionEndpoint,
-        client::NotionClient,
-    };
-}
+/**
+Read
+----
+Blocks enum
+Page Query enum
+Database query enum
+Blocks cache
+
+Write
+---
+??
+*/
+pub use crate::{
+    block::{BlockData, NotionBlock},
+    cfg::ClientConfig,
+    cfg::NotionEndpoint,
+    client::NotionClient,
+};
