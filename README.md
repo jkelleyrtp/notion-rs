@@ -1,29 +1,57 @@
-# notion-rs
+# Notion-rs
 
-A wasm-friendly rust implementation of the Notion.so unofficial API.
+A Rust and Typescript implementation of the Notion.so unofficial API. The goal is to provide high quality, fast, and portable bindings to the API as a basis for complex notion integrations.
 
-Generate complex queries of your notion workspace!
+For portability, we're aiming to support whatever Rust can bind to, especially WASM so the API can be embedded in a web page.
+
+## Usage
+
+Rust:
+```rust
+use notion_rs::NotionClient;
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let link = "https://www.notion.so/157765353f2c4705bd45474e5ba8b46c";
+
+    let token = std::env::var("NOTION_TOKEN_V2").unwrap();
+
+    let mut client = NotionClient::builder().token_v2(token.as_str()).build();
+
+    let response = client.get_page(link).await?;
+
+    println!("{:#?}", response.record_map.block);
+
+    Ok(())
+}
+```
+
+Typescript:
+```typescript
+let client = new NotionClient(token_v2);
+
+let page = client.getPage("https://www.notion.so/157765353f2c4705bd45474e5ba8b46c");
+
+for (const block of page.blocks) {
+    console.log(block.title);
+}
+```
+
+
+
+## Example
 
 ```rust
 // Configuration is stored in a notions.toml file
 // Make sure to ignore the contents so your keys don't get leaked
-let client = NotionClient::from_file("notion.toml")?;
+let mut client = NotionClient::from_file("notion.toml")?;
 
-// The blocksview is a collection of references to notionblocks
-// You cannot own a notion block, but you can get a mutable reference to it
-// You can get a mutable reference to a notion block
-// You can sync modifcation to a notion block 
-let myblocks: BlocksView = client
-                            .query_builder()
-                            .collection_view("12345") // collection query
-                            .view_id("123")
-                            .filter_column("bill", TagFilter::Matches(""))
-                            .filter_column("date", TagFilter::Matches(""))
-                            .post()
-                            .await?;
-            
+
 // Label all equations on a page!
-myblocks
+client
+    .get_page("...")
+    .await?
+    .blocks
     .iter()
     .filter(|(id, block)| block.block_type == BlockTypes::equation)
     .enumerate()
@@ -34,34 +62,9 @@ myblocks
         block.set_title().ok_or(());
     }); 
 
-// Updates blocks that have been changed via methods
-client
-    .update()
-    .await?;
+// Batch changes together before writing
+client.write_all().await?;
 ```
-
-
-## Mutations
-Very basic mutation support at the moment, currently done by mutating a block in an ownership scope;
-
-```rust
-client.modify("f1366603-f22f-40cf-bbe4-dd48dc9a023c", |block| {
-    match &mut block.data {
-        BlockData::Header(header) => {
-            header.title = "New header!";
-        }
-    }
-    block
-})
-```
-
-Aiming for something more along the lines of:
-```rust
-let mut myblock = client.get_mut::<HeaderBlock>("f1366603-f22f-40cf-bbe4-dd48dc9a023c")?
-```
-
-
-
 
 ## Support
 Current support is:
