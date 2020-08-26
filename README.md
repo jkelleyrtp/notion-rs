@@ -68,26 +68,26 @@ Current support is:
 
 | Block        | Read  | Write |
 | ------------ | :---: | ----: |
-| Header       |   x   |       |
-| SubHeader    |   x   |       |
-| SubSubHeader |   x   |       |
-| Quote        |   x   |       |
-| Code         |   x   |       |
-| ToDo         |   x   |       |
-| Bookmark     |   x   |       |
-| BulletedList |   x   |       |
-| Image        |   x   |       |
-| Divider      |   x   |       |
-| ToC          |   x   |       |
-| Breadcrumb   |   x   |       |
-| Page         |   x   |       |
-| NumberedList |   x   |       |
-| Text         |   o   |       |
-| Equation     |   o   |       |
-| Toggle       |   o   |       |
-| Callout      |   o   |       |
-| Factory      |   o   |       |
-| Collection   |   o   |       |
+| Header       |   ☑️   |       |
+| SubHeader    |   ☑️   |       |
+| SubSubHeader |   ☑️   |       |
+| Quote        |   ☑️   |       |
+| Code         |   ☑️   |       |
+| ToDo         |   ☑️   |       |
+| Bookmark     |   ☑️   |       |
+| BulletedList |   ☑️   |       |
+| Image        |   ☑️   |       |
+| Divider      |   ☑️   |       |
+| ToC          |   ☑️   |       |
+| Breadcrumb   |   ☑️   |       |
+| Page         |   ☑️   |       |
+| NumberedList |   ☑️   |       |
+| Text         |   ☑️   |       |
+| Equation     |   ☑️   |       |
+| Toggle       |   ☑️   |       |
+| Callout      |   ☑️   |       |
+| Factory      |   ☑️   |       |
+| Collection   |   🛠   |       |
 
-`x = fully supported`
-`o = partially supported`
+`☑️ = fully supported`
+`🛠 = partially supported`
