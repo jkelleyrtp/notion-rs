@@ -56,28 +56,26 @@ Notion embeds context into the text (number of lines, starting characters, retur
     ]
 }
 */
-pub fn compress_properties(
-    vals: serde_json::Value,
-    content: Option<Vec<String>>,
-) -> anyhow::Result<serde_json::Value> {
-    let interpreted: HashMap<String, Vec<Vec<String>>> = serde_json::from_value(vals)?;
+pub fn compress_properties(vals: serde_json::Value) -> anyhow::Result<serde_json::Value> {
+    let interpreted: HashMap<String, serde_json::Value> =
+        serde_json::from_value(vals.clone()).expect(format!("vals are \n{:#?}", vals).as_str());
 
-    let mut new: HashMap<String, serde_json::Value> = interpreted
+    let new: HashMap<String, String> = interpreted
         .into_iter()
-        .map(|(id, value)| {
-            let mut out = String::new();
-            for outer in value {
-                for inner in outer {
-                    out.push_str(inner.as_str())
-                }
-            }
-            (id, serde_json::Value::String(out))
-        })
+        .map(|(id, value)| (id, recurse_nested_array(value)))
         .collect();
 
-    if let Some(ct) = content {
-        new.insert("content".to_string(), serde_json::to_value(ct)?);
-    }
-
     Ok(serde_json::to_value(new)?)
+}
+
+fn recurse_nested_array(val: serde_json::Value) -> String {
+    match val {
+        serde_json::Value::String(text) => text,
+        serde_json::Value::Array(ar) => ar
+            .into_iter()
+            .map(|f| recurse_nested_array(f))
+            .collect::<Vec<String>>()
+            .concat(),
+        _ => "".to_string(),
+    }
 }

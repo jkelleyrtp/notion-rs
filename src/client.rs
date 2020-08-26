@@ -1,3 +1,4 @@
+use crate::util::GetBlocksResponse;
 use {
     crate::query::NotionQuery,
     crate::{ClientConfig, NotionEndpoint},
@@ -35,6 +36,17 @@ impl NotionClient {
             .await
             .map_err(|_f| anyhow!("hello!"))
     }
+
+    pub async fn get_page(&mut self, url: &str) -> Result<GetBlocksResponse> {
+        let query = NotionQuery::from_url(url)?;
+        let res = self
+            .post_query(query)
+            .await?
+            .json::<GetBlocksResponse>()
+            .await?;
+
+        Ok(res)
+    }
 }
 
 #[tokio::test]
@@ -43,10 +55,9 @@ async fn test_notion_client() -> Result<()> {
         "https://www.notion.so/jonathankelley/KitchenSink-Test-eb4923253d154dd5adf8a80d773acb15";
 
     // Make sure to use ENV vars to test
-    // let token = std::env::var("NOTION_TOKEN_V2")?;
-    let token = "6b28acdd4833c13eac5980ce925691146fb218faeaaee0519ca737d538b264afa3821e630e4b215619fc8d18c05117276b77d1944c3b1618612ece054b437d83e28b7b4427e5a71912e912607254";
+    let token = std::env::var("NOTION_TOKEN_V2")?;
 
-    let mut client = NotionClient::builder().token_v2(token).build();
+    let mut client = NotionClient::builder().token_v2(token.as_str()).build();
 
     let myblocks = client
         .post_query(NotionQuery::from_url(page)?)

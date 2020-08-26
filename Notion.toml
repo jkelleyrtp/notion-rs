@@ -1,0 +1,15 @@
+[auth]
+token_v2 = "your token goes here>"
+
+
+[client]
+api_url= "https://www.notion.so/api/v3/"
+base_url = "https://www.notion.so"
+signed_url_prefix = "https://www.notion.so/signed/"
+s3_url_prefix = "https://s3-us-west-2.amazonaws.com/secure.notion-static"
+s3_url_prefix_encoded = "https://s3.us-west-2.amazonaws.com/secure.notion-static"
+
+
+[config]
+cache = true
+

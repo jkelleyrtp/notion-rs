@@ -5,7 +5,7 @@
         "role": "editor",
         "value": {
           "id": "eb492325-3d15-4dd5-adf8-a80d773acb15",
-          "version": 149,
+          "version": 150,
           "type": "page",
           "properties": {
             "title": [["KitchenSink Test"]]
@@ -52,7 +52,7 @@
             }
           ],
           "created_time": 1591838940000,
-          "last_edited_time": 1598328120000,
+          "last_edited_time": 1598335440000,
           "parent_id": "9eb2b16c-8502-469d-a4f8-1c11e1d65051",
           "parent_table": "space",
           "alive": true,
@@ -245,13 +245,18 @@
         "role": "editor",
         "value": {
           "id": "4abf48cc-d990-4d2d-8385-77b7f84067d9",
-          "version": 16,
+          "version": 22,
           "type": "toggle",
           "properties": {
             "title": [["asdasdasd"]]
           },
+          "content": [
+            "42a90bc4-ed0f-47b7-a1bc-9169054e6895",
+            "c383fcc1-ba0c-45ad-894b-cc5cf585d03b",
+            "9527468e-4812-42a9-b12b-8319cadab614"
+          ],
           "created_time": 1591937334998,
-          "last_edited_time": 1591937280000,
+          "last_edited_time": 1598335440000,
           "parent_id": "eb492325-3d15-4dd5-adf8-a80d773acb15",
           "parent_table": "block",
           "alive": true,

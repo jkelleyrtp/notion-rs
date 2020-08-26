@@ -5,17 +5,18 @@ mod page;
 mod raw;
 mod text;
 
-use anyhow::{anyhow, Result};
+use anyhow::Result;
 pub use data::BlockData;
-use equation::NotionEquation;
 use raw::{compress_properties, RawBlock, RawInput};
 use serde_json::json;
+use uuid::Uuid;
 use {serde::Serialize, serde_json};
 
 #[derive(Debug, Serialize, PartialEq)]
 pub struct NotionBlock {
     pub id: String,
     pub data: BlockData,
+    pub content: Vec<Uuid>,
 }
 
 impl<'de> serde::Deserialize<'de> for NotionBlock {
@@ -31,29 +32,28 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
             properties,
             content,
             ..
-        } = serde_json::from_value(raw_in.value).unwrap();
+        } = serde_json::from_value(raw_in.value).expect("Failed to convert serde");
 
-        let compressed_props = compress_properties(properties.unwrap(), content).unwrap();
+        let compressed_props = compress_properties(properties.unwrap_or(json!({}))).expect("rip");
 
         let inter = json!({
           "type": block_type,
           "properties": compressed_props,
         });
 
-        let data: BlockData = serde_json::from_value(inter).unwrap();
+        let data: BlockData =
+            serde_json::from_value(inter.clone()).expect(format!("{:#?}", inter).as_str());
 
-        let outblock = NotionBlock { id, data };
+        let content = content
+            .unwrap_or(vec![])
+            .into_iter()
+            .map(|f| Uuid::parse_str(f.as_str()))
+            .filter_map(Result::ok)
+            .collect();
+
+        let outblock = NotionBlock { id, data, content };
 
         Ok(outblock)
-    }
-}
-
-impl NotionBlock {
-    pub fn to_equation(&mut self) -> Result<&mut NotionEquation> {
-        match &mut self.data {
-            BlockData::Equation(eqn) => Ok(eqn),
-            _ => Err(anyhow!("Invalid type conversion")),
-        }
     }
 }
 
@@ -100,14 +100,17 @@ fn test_serde() {
     assert_eq!(
         block.data,
         BlockData::Page {
-            title: "KitchenSink Test".to_string(),
-            content: vec![
-                uuid::Uuid::parse_str("f1366603-f22f-40cf-bbe4-dd48dc9a023c").unwrap(),
-                uuid::Uuid::parse_str("59ca4846-c2f5-4938-9c9f-6a85c175dec8").unwrap(),
-                uuid::Uuid::parse_str("ab37cc91-5cee-473e-a559-73effa5e8b7b").unwrap(),
-                uuid::Uuid::parse_str("63ebaf2b-de3b-415f-826c-0a842b3145f7").unwrap(),
-                uuid::Uuid::parse_str("87ab67ca-8919-4086-98ba-35714248d088").unwrap()
-            ]
-        }
+            title: "KitchenSink Test".to_string().into(),
+        },
     );
+    assert_eq!(
+        block.content,
+        vec![
+            uuid::Uuid::parse_str("f1366603-f22f-40cf-bbe4-dd48dc9a023c").unwrap(),
+            uuid::Uuid::parse_str("59ca4846-c2f5-4938-9c9f-6a85c175dec8").unwrap(),
+            uuid::Uuid::parse_str("ab37cc91-5cee-473e-a559-73effa5e8b7b").unwrap(),
+            uuid::Uuid::parse_str("63ebaf2b-de3b-415f-826c-0a842b3145f7").unwrap(),
+            uuid::Uuid::parse_str("87ab67ca-8919-4086-98ba-35714248d088").unwrap()
+        ]
+    )
 }

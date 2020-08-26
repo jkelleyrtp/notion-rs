@@ -6,6 +6,7 @@ use serde::{de, Deserialize, Serialize};
 #[derive(Serialize, Deserialize, Debug, PartialEq)]
 pub struct NotionEquation {}
 
+#[allow(dead_code)]
 pub fn deserialize_notion_equation<'de, D>(deserializer: D) -> Result<NotionEquation, D::Error>
 where
     D: de::Deserializer<'de>,

@@ -13,4 +13,4 @@ Cargo.lock
 
 /external/
 
-Notion.toml
+.vscode/

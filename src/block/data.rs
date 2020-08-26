@@ -1,74 +1,79 @@
-use super::{
-    equation::{deserialize_notion_equation, NotionEquation},
-    text::deserialize_notion_text,
-    text::NotionText,
-};
 use serde::{Deserialize, Serialize};
-use uuid::Uuid;
 
+/// Internal data for Notion Blocks
+/// Note that every field might not be captured
 #[serde(tag = "type", content = "properties", rename_all = "snake_case")]
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 pub enum BlockData {
+    Divider {},
+    TableOfContents {},
+    Breadcrumb {},
+    Callout {
+        title: Option<String>,
+    },
+
     Header {
-        title: String,
+        title: Option<String>,
     },
     SubHeader {
-        title: String,
+        title: Option<String>,
     },
     SubSubHeader {
-        title: String,
+        title: Option<String>,
     },
     Quote {
-        title: String,
+        title: Option<String>,
     },
     Code {
-        title: String,
-        language: String,
+        title: Option<String>,
+        language: Option<String>,
     },
     ToDo {
-        title: String,
+        title: Option<String>,
     },
     Bookmark {
-        title: String,
-        link: String,
+        title: Option<String>,
+        link: Option<String>,
     },
     BulletedList {
-        title: String,
+        title: Option<String>,
     },
     Image {
-        source: String,
-        caption: String,
+        source: Option<String>,
+        caption: Option<String>,
     },
-    Divider,
-    TableOfContents,
-    Breadcrumb,
+
     Page {
-        title: String,
-        content: Vec<Uuid>,
+        title: Option<String>,
+    },
+    Toggle {
+        title: Option<String>,
     },
 
-    // TODO
     NumberedList {
-        title: String,
+        title: Option<String>,
     },
 
-    #[serde(deserialize_with = "deserialize_notion_text")]
-    Text(NotionText),
+    Text {
+        title: Option<String>,
+    },
 
-    #[serde(deserialize_with = "deserialize_notion_equation")]
-    Equation(NotionEquation),
+    Equation {
+        title: Option<String>,
+    },
 
+    Factory {
+        title: Option<String>,
+    },
+
+    ColumnList {},
+    Column {},
+    Video {
+        caption: Option<String>,
+        source: Option<String>,
+    },
     // TODO
-    Toggle,
-
-    // TODO
-    Callout,
-
-    // TODO
-    Factory,
-
-    // TODO
-    CollectionView,
+    CollectionView {},
 
     #[serde(other)]
     Unknown,
@@ -85,8 +90,22 @@ fn test_adjacently_tagged() -> anyhow::Result<()> {
     assert_eq!(
         block_data,
         BlockData::Header {
-            title: "HEADERITEM".to_string()
+            title: "HEADERITEM".to_string().into()
         }
     );
+
+    let block_data: BlockData = serde_json::from_value(serde_json::json!({
+        "type": "text",
+        "properties": {
+            "title": "HEADERITEM"
+        }
+    }))?;
+    assert_eq!(
+        block_data,
+        BlockData::Header {
+            title: "HEADERITEM".to_string().into()
+        }
+    );
+
     Ok(())
 }

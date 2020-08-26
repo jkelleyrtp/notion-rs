@@ -28,13 +28,10 @@ myblocks
     .filter(|(id, block)| block.block_type == BlockTypes::equation)
     .enumerate()
     .for_each(|(eqnID, (id, block))| {
-        match block.block_type {
-            BlockTypes::Equation(eqn) =>{
-                // Automatically sends a "needs update" flag to the client
-                eqn.change_text(|f: String| format!("{:} {:}", f, eqnID) )
-            }
-            _ => {}
-        }
+        // Will do it's best to set the text value
+        // Is failable, though you can choose to ignore the error;
+        block.set_title()?;
+        block.set_title().ok_or(());
     }); 
 
 // Updates blocks that have been changed via methods

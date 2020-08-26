@@ -1,7 +1,6 @@
 mod block;
 mod cfg;
 mod client;
-mod nbref;
 mod query;
 mod util;
 
