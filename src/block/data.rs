@@ -8,63 +8,35 @@ pub enum BlockData {
     Divider {},
     TableOfContents {},
     Breadcrumb {},
-    Callout {
-        title: Option<String>,
-    },
+    Callout {},
 
-    Header {
-        title: Option<String>,
-    },
-    SubHeader {
-        title: Option<String>,
-    },
-    SubSubHeader {
-        title: Option<String>,
-    },
-    Quote {
-        title: Option<String>,
-    },
+    Header {},
+    SubHeader {},
+    SubSubHeader {},
+    Quote {},
     Code {
-        title: Option<String>,
         language: Option<String>,
     },
-    ToDo {
-        title: Option<String>,
-    },
+    ToDo {},
     Bookmark {
-        title: Option<String>,
         link: Option<String>,
     },
-    BulletedList {
-        title: Option<String>,
-    },
+    BulletedList {},
     Image {
         source: Option<String>,
         caption: Option<String>,
     },
 
-    Page {
-        title: Option<String>,
-    },
-    Toggle {
-        title: Option<String>,
-    },
+    Page {},
+    Toggle {},
 
-    NumberedList {
-        title: Option<String>,
-    },
+    NumberedList {},
 
-    Text {
-        title: Option<String>,
-    },
+    Text {},
 
-    Equation {
-        title: Option<String>,
-    },
+    Equation {},
 
-    Factory {
-        title: Option<String>,
-    },
+    Factory {},
 
     ColumnList {},
     Column {},
@@ -87,23 +59,19 @@ fn test_adjacently_tagged() -> anyhow::Result<()> {
             "title": "HEADERITEM"
         }
     }))?;
-    assert_eq!(
-        block_data,
-        BlockData::Header {
-            title: "HEADERITEM".to_string().into()
-        }
-    );
+    assert_eq!(block_data, BlockData::Header {});
 
     let block_data: BlockData = serde_json::from_value(serde_json::json!({
-        "type": "text",
+        "type": "code",
         "properties": {
-            "title": "HEADERITEM"
+            "title": "CODEITEM",
+            "language": "Python"
         }
     }))?;
     assert_eq!(
         block_data,
-        BlockData::Header {
-            title: "HEADERITEM".to_string().into()
+        BlockData::Code {
+            language: "Python".to_string().into()
         }
     );
 

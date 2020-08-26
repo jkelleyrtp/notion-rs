@@ -1,7 +1,6 @@
 mod collection;
 mod data;
 mod equation;
-mod page;
 mod raw;
 mod text;
 
@@ -16,6 +15,7 @@ use {serde::Serialize, serde_json};
 pub struct NotionBlock {
     pub id: String,
     pub data: BlockData,
+    pub title: Option<String>,
     pub content: Vec<Uuid>,
 }
 
@@ -41,8 +41,7 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
           "properties": compressed_props,
         });
 
-        let data: BlockData =
-            serde_json::from_value(inter.clone()).expect(format!("{:#?}", inter).as_str());
+        let data: BlockData = serde_json::from_value(inter).unwrap();
 
         let content = content
             .unwrap_or(vec![])
@@ -51,7 +50,17 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
             .filter_map(Result::ok)
             .collect();
 
-        let outblock = NotionBlock { id, data, content };
+        let title = match compressed_props.get("title") {
+            Some(a) => Some(a.as_str().unwrap().to_string()),
+            None => None,
+        };
+
+        let outblock = NotionBlock {
+            id,
+            data,
+            content,
+            title,
+        };
 
         Ok(outblock)
     }
@@ -97,12 +106,9 @@ fn test_serde() {
     let block: NotionBlock = serde_json::from_value(block).unwrap();
 
     assert_eq!(block.id.as_str(), "eb492325-3d15-4dd5-adf8-a80d773acb15");
-    assert_eq!(
-        block.data,
-        BlockData::Page {
-            title: "KitchenSink Test".to_string().into(),
-        },
-    );
+    assert_eq!(block.data, BlockData::Page {});
+    assert_eq!(block.title.unwrap(), "KitchenSink Test".to_string());
+
     assert_eq!(
         block.content,
         vec![
