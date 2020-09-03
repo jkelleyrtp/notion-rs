@@ -21,11 +21,13 @@ impl NotionClient {
         endpoint: NotionEndpoint,
         data: serde_json::value::Value,
     ) -> Result<reqwest::Response> {
-        let token = self.cfg.auth_token.as_ref().ok_or(anyhow!("No auth token"));
         self.client
             .post(endpoint.as_str())
             .json(&data)
-            .header(reqwest::header::COOKIE, format!("token_v2={}", token?))
+            .header(
+                reqwest::header::COOKIE,
+                format!("token_v2={}", self.cfg.auth_token),
+            )
             .send()
             .await
             .map_err(|_| anyhow!("failed to post"))
@@ -39,6 +41,17 @@ impl NotionClient {
 
     pub async fn get_page(&mut self, url: &str) -> Result<GetBlocksResponse> {
         let query = NotionQuery::from_url(url)?;
+        let res = self
+            .post_query(query)
+            .await?
+            .json::<GetBlocksResponse>()
+            .await?;
+
+        Ok(res)
+    }
+
+    pub async fn get_block(&mut self, id: uuid::Uuid) -> Result<GetBlocksResponse> {
+        let query = NotionQuery::GetBlock { block_id: id };
         let res = self
             .post_query(query)
             .await?

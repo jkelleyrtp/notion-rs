@@ -11,7 +11,7 @@ use serde_json::json;
 use uuid::Uuid;
 use {serde::Serialize, serde_json};
 
-#[derive(Debug, Serialize, PartialEq)]
+#[derive(Debug, Serialize, PartialEq, Clone)]
 pub struct NotionBlock {
     pub id: String,
     pub data: BlockData,

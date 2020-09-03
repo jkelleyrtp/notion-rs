@@ -21,4 +21,5 @@ pub use crate::{
     cfg::ClientConfig,
     cfg::NotionEndpoint,
     client::NotionClient,
+    query::NotionQuery,
 };

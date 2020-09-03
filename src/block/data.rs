@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 /// Internal data for Notion Blocks
 /// Note that every field might not be captured
 #[serde(tag = "type", content = "properties", rename_all = "snake_case")]
-#[derive(Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, PartialEq, Serialize, Deserialize, Clone)]
 pub enum BlockData {
     Divider {},
     TableOfContents {},
