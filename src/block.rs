@@ -32,16 +32,19 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
             properties,
             content,
             ..
-        } = serde_json::from_value(raw_in.value).expect("Failed to convert serde");
+        } = serde_json::from_value(raw_in.value)
+            .map_err(|f| serde::de::Error::custom(f.to_string()))?;
 
-        let compressed_props = compress_properties(properties.unwrap_or(json!({}))).expect("rip");
+        let compressed_props = compress_properties(properties.unwrap_or(json!({})))
+            .map_err(|f| serde::de::Error::custom(f.to_string()))?;
 
         let inter = json!({
           "type": block_type,
           "properties": compressed_props,
         });
 
-        let data: BlockData = serde_json::from_value(inter).unwrap();
+        let data: BlockData =
+            serde_json::from_value(inter).map_err(|f| serde::de::Error::custom(f.to_string()))?;
 
         let content = content
             .unwrap_or(vec![])
@@ -50,10 +53,7 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
             .filter_map(Result::ok)
             .collect();
 
-        let title = match compressed_props.get("title") {
-            Some(a) => Some(a.as_str().unwrap().to_string()),
-            None => None,
-        };
+        let title = compressed_props.get("title").map(|a| a.to_string());
 
         let outblock = NotionBlock {
             id,

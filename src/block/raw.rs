@@ -35,9 +35,9 @@ pub struct RawBlock {
 
 /*
 Notion is really weird and they have this nested title situation. Not sure
-what the best way to deserialize this is. It's meant for really pre-processing
-long titles. For now, we flatten the vecs down before deserializing them so it's
-easier to work with.
+what the best way to deserialize this is. It's really meant for pre-processing
+long titles and working with complex bodies of text. For now, we flatten the
+vecs down before deserializing them so it's easier to work with.
 
 "properties": {
     "title": [["THISISATODO"]]

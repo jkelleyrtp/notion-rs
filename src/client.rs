@@ -65,8 +65,6 @@ async fn test_notion_client() -> Result<()> {
         .json::<serde_json::Value>()
         .await?;
 
-    // println!("My blocks {:#?}", myblocks);
-
     println!("{}", serde_json::to_string_pretty(&myblocks).unwrap());
 
     Ok(())
