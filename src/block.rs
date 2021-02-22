@@ -1,10 +1,14 @@
 mod collection;
 mod data;
-mod equation;
-mod raw;
+pub(crate) mod raw;
 mod text;
 
-use anyhow::Result;
+// todo!
+// - enable custom equation support
+// - enable collection support
+
+// mod equation;
+
 pub use data::BlockData;
 use raw::{compress_properties, RawBlock, RawInput};
 use serde_json::json;
@@ -33,18 +37,18 @@ impl<'de> serde::Deserialize<'de> for NotionBlock {
             content,
             ..
         } = serde_json::from_value(raw_in.value)
-            .map_err(|f| serde::de::Error::custom(f.to_string()))?;
+            .map_err(|why| serde::de::Error::custom(why.to_string()))?;
 
         let compressed_props = compress_properties(properties.unwrap_or(json!({})))
-            .map_err(|f| serde::de::Error::custom(f.to_string()))?;
+            .map_err(|why| serde::de::Error::custom(why.to_string()))?;
 
         let inter = json!({
           "type": block_type,
           "properties": compressed_props,
         });
 
-        let data: BlockData =
-            serde_json::from_value(inter).map_err(|f| serde::de::Error::custom(f.to_string()))?;
+        let data: BlockData = serde_json::from_value(inter)
+            .map_err(|why| serde::de::Error::custom(why.to_string()))?;
 
         let content = content
             .unwrap_or(vec![])

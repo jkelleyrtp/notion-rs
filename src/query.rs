@@ -1,5 +1,5 @@
 //! A query to make to the notion client
-use anyhow::Result;
+use crate::error::Result;
 use serde_json::json;
 use uuid::Uuid;
 
@@ -65,9 +65,4 @@ fn link_to_uuid(url: &str) -> Result<Uuid> {
 
     // TODO @Jon remap the error to the crate's error type
     Ok(Uuid::parse_str(id)?)
-}
-
-mod tests {
-    #[test]
-    fn test_query() {}
 }

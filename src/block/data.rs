@@ -9,37 +9,30 @@ pub enum BlockData {
     TableOfContents {},
     Breadcrumb {},
     Callout {},
-
     Header {},
     SubHeader {},
     SubSubHeader {},
     Quote {},
+    ToDo {},
+    BulletedList {},
+    Page {},
+    Toggle {},
+    NumberedList {},
+    Text {},
+    Equation {},
+    Factory {},
+    ColumnList {},
+    Column {},
     Code {
         language: Option<String>,
     },
-    ToDo {},
     Bookmark {
         link: Option<String>,
     },
-    BulletedList {},
     Image {
         source: Option<String>,
         caption: Option<String>,
     },
-
-    Page {},
-    Toggle {},
-
-    NumberedList {},
-
-    Text {},
-
-    Equation {},
-
-    Factory {},
-
-    ColumnList {},
-    Column {},
     Video {
         caption: Option<String>,
         source: Option<String>,

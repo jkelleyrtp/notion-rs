@@ -1,20 +1,27 @@
 [package]
-name = "notion_rs"
+name = "notion-rs"
 version = "0.1.0"
 authors = ["Jonathan Kelley <jkelleyrtp@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-reqwest = { version = "0.10.8", features = ["cookies", "json"] }
 serde = "1.0.115"
 serde_json = { version = "1.0.57", features = ["preserve_order"] }
 toml = "0.5"
-anyhow = "1.0.32"
-tokio = { version = "0.2.22", features = ["test-util", "macros"] }
 uuid = { version = "0.8.1", features = ["v4", "serde"] }
 indexmap = { version = "1.5.1", features = ["serde-1"] }
+thiserror = "1.0.24"
+log = "*"
 
+# todo: move to surf
+# reqwest requires tokio which is meh
+# surf = { version = "2.1.0", optional = true }
+reqwest = { version = "*", features = ["cookies", "json"], optional = true }
 
 [dev-dependencies]
-clap = "2.33.3"
+async-std = { version = "1.9.0", features = ["attributes", "tokio1"] }
+anyhow = "1.0.32"
 
+[features]
+default = ["client"]
+client = ["reqwest"]

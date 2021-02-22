@@ -1,16 +1,14 @@
-use notion_rs::NotionClient;
-
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
-    let link = "https://www.notion.so/157765353f2c4705bd45474e5ba8b46c";
-
+#[async_std::main]
+async fn main() {
+    // Don't commit your token to git!
     let token = std::env::var("NOTION_TOKEN_V2").unwrap();
 
-    let mut client = NotionClient::builder().token_v2(token.as_str()).build();
+    let mut client = notion_rs::builder(token.as_str()).build();
 
-    let response = client.get_page(link).await?;
+    let blocks = client
+        .get_page("https://www.notion.so/157765353f2c4705bd45474e5ba8b46c")
+        .await
+        .unwrap();
 
-    println!("{:#?}", response.record_map.block);
-
-    Ok(())
+    println!("{:#?}", blocks);
 }

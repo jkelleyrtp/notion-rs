@@ -1,26 +1,81 @@
-use {
-    serde::{Deserialize, Serialize},
-    serde_json,
-    std::collections::HashMap,
-};
+//! This module provides the raw types for serde to serialize/deserialize requests into.
+//!
+//! Schema
+//! ----
+//! {
+//!     recordMap: {
+//!         block: {
+//!             [id]: NotionBlock
+//!         },
+//!         space: {
+//!             [id]: Space
+//!         },
+//!         notion_user: {
+//!             [id]: User
+//!         }
+//!     },
+//!     cursor: {
+//!         stack: [?]
+//!     }
+//! }
+//!
+
+use crate::innerlude::{NotionBlock, Result};
+use indexmap::IndexMap;
+use serde::{Deserialize, Serialize};
+use serde_json::Value as JsonValue;
+use std::collections::HashMap;
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct RawInput {
-    pub role: String,
-    pub value: serde_json::Value,
+pub struct GetBlocksResponse {
+    #[serde(rename = "recordMap")]
+    pub record_map: RecordMap,
+
+    pub cursor: Option<JsonValue>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct RawBlock {
-    pub id: String,
-    version: u32,
+pub struct RecordMap {
+    /// An ordered hashmap
+    pub block: BlockMap,
 
+    /// TBD actual values on these
+    pub space: JsonValue,
+
+    /// TBD actual values on these
+    pub discussion: JsonValue,
+
+    /// TBD actual values on these
+    pub comment: JsonValue,
+
+    /// TBD actual values on these
+    pub collection: JsonValue,
+
+    /// TBD actual values on these
+    pub collection_view: JsonValue,
+    // /// TBD actual values on these
+    // /// This *might* be deprecated
+    // pub notion_user: Option<JsonValue>,
+}
+
+pub type BlockMap = IndexMap<String, NotionBlock>;
+
+#[derive(Serialize, Deserialize, Debug)]
+pub(crate) struct RawInput {
+    pub role: String,
+    pub value: JsonValue,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub(crate) struct RawBlock {
     #[serde(alias = "type")]
     pub block_type: String,
-    pub properties: Option<serde_json::Value>,
-    pub format: Option<serde_json::Value>,
+    pub id: String,
+    version: u32,
+    pub properties: Option<JsonValue>,
+    pub format: Option<JsonValue>,
     pub content: Option<Vec<String>>,
-    permissions: Option<serde_json::Value>,
+    permissions: Option<JsonValue>,
     created_time: i64,
     last_edited_time: i64,
     parent_id: String,
@@ -43,8 +98,7 @@ vecs down before deserializing them so it's easier to work with.
     "title": [["THISISATODO"]]
 },
 
-
-Text is *real fuckety*
+Text is strange
 ----
 A dedicated parser is be needed for text deserialization.
 Notion embeds context into the text (number of lines, starting characters, return, etc)
@@ -56,8 +110,8 @@ Notion embeds context into the text (number of lines, starting characters, retur
     ]
 }
 */
-pub fn compress_properties(vals: serde_json::Value) -> anyhow::Result<serde_json::Value> {
-    let interpreted: HashMap<String, serde_json::Value> =
+pub fn compress_properties(vals: JsonValue) -> Result<JsonValue> {
+    let interpreted: HashMap<String, JsonValue> =
         serde_json::from_value(vals.clone()).expect(format!("vals are \n{:#?}", vals).as_str());
 
     let new: HashMap<String, String> = interpreted
@@ -68,10 +122,10 @@ pub fn compress_properties(vals: serde_json::Value) -> anyhow::Result<serde_json
     Ok(serde_json::to_value(new)?)
 }
 
-fn recurse_nested_array(val: serde_json::Value) -> String {
+fn recurse_nested_array(val: JsonValue) -> String {
     match val {
-        serde_json::Value::String(text) => text,
-        serde_json::Value::Array(ar) => ar
+        JsonValue::String(text) => text,
+        JsonValue::Array(ar) => ar
             .into_iter()
             .map(|f| recurse_nested_array(f))
             .collect::<Vec<String>>()
