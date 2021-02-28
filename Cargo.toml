@@ -8,11 +8,9 @@ edition = "2018"
 [dependencies]
 serde = "1.0.115"
 serde_json = { version = "1.0.57", features = ["preserve_order"] }
-toml = "0.5"
 uuid = { version = "0.8.1", features = ["v4", "serde"] }
 indexmap = { version = "1.5.1", features = ["serde-1"] }
 thiserror = "1.0.24"
-log = "*"
 
 # todo: move to surf
 # reqwest requires tokio which is meh
