@@ -2,6 +2,7 @@
 name = "notion-rs"
 version = "0.1.0"
 authors = ["Jonathan Kelley <jkelleyrtp@gmail.com>"]
+tags = ["notion", "api", "productivity", "notes"]
 edition = "2018"
 
 [dependencies]

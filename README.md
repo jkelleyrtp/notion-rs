@@ -19,9 +19,9 @@ async fn main() {
 }
 ```
 
-This crate provides query builders, a surf-based client, and the ability to write changes back to Notion.so. With a built-in diffing mechanism, notion-rs allows you to download block data, modify it in place, and commit the changes back to the notion database.
+This crate provides query builders, a reqwest-based client, and the ability to write changes back to Notion.so. With a built-in diffing mechanism, notion-rs allows you to download block data, modify it in place, and commit the changes back to the notion database.
 
-This crate can be used with and without the `surf` client, in case you'd like to use an alternate HTTP client or don't want to bundle two versions of the client together. For those use cases, we provide a query builder which can be integrated with surf and reqwest.
+This crate can be used with and without the `reqwest` client, in case you'd like to use an alternate HTTP client or don't want to bundle two versions of the client together. For those use cases, we provide a query builder which can be integrated with surf and reqwest.
 
 As such, this crate works in a WASM environment, and will happily run paired with a WASM web framework. Take note that the underlying method calls are async, so you'll need to provide your own async runtime or use you own synchronous web client.
 
