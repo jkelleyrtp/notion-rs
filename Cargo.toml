@@ -6,6 +6,7 @@ tags = ["notion", "api", "productivity", "notes"]
 edition = "2018"
 description = "Rust client for the unofficial notion.so API"
 "license" = "MIT/Apache-2.0"
+repository = "https://github.com/notion-apps/notion-rs"
 
 [dependencies]
 serde = "1.0.115"
